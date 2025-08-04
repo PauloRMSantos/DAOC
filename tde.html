@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDE 01</title>
+</head>
+<body>
+    <h1>
+        Olha o log =]
+    </h1>
+    <button onclick="Soma()">somar no log</button>
+    <br>
+    <br>
+    <br>
+    <button onclick="ParOuImpar()">Mostrar lista no log também uhul</button>
+
+    <script>
+        function Soma(a, b) {
+            a = 12
+            b = 15
+            return console.log(a+b);
+        }
+
+        function ParOuImpar(inteiros) {
+            inteiros = [1, 2, 3, 5, 87, 14, 876, 4]
+            inteiros.forEach(numero => {
+                if(numero % 2 == 0){
+                    console.log(numero + " é par")
+                } else {
+                    console.log(numero + " é ímpar")
+                }
+            });
+        }
+    </script>
+</body>
+</html>
