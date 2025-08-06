@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Aula 02 - DAOC</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>LOGO</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="carrousel">
+            <img id="carrousel-img" alt="">
+            <div id="seletores">
+                <button onclick="previous()">Anterior</button>
+                <button onclick="next()">Próximo</button>
+            </div>
+        </section>
+
+        <section>
+            <table>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                </tr>
+                <tr>
+                    <td>paulo</td>
+                    <td>paulo.rosantos@rede.ulbra.br</td>
+                </tr>
+                <tr>
+                    <td>paulo</td>
+                    <td>paulo.rosantos@rede.ulbra.br</td>
+                </tr>
+                <tr>
+                    <td>paulo</td>
+                    <td>paulo.rosantos@rede.ulbra.br</td>
+                </tr>
+                <tr>
+                    <td>paulo</td>
+                    <td>paulo.rosantos@rede.ulbra.br</td>
+                </tr>
+                <tr>
+                    <td>paulo</td>
+                    <td>paulo.rosantos@rede.ulbra.br</td>
+                </tr>
+            </table>
+        </section>
+        <section>
+            <form name="cadastro">
+                <input type="text" name="name" placeholder="Digite seu nome">
+                <button type="submit" onclick="handleForms(event)">Cadastrar</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const imgArray = [
+            "https://fastly.picsum.photos/id/928/600/500.jpg?hmac=28UA-E3-EyUinVPyIsqd5Eoo4LBzVcldsT6txitm210",
+            "https://fastly.picsum.photos/id/104/600/500.jpg?hmac=9T7DlXI6iCXldE48xpxVWtg6w_SPKQt1BrFRbRzDLWM",
+            "https://fastly.picsum.photos/id/241/600/500.jpg?hmac=H72LjPnIKcgd5DHjLgE7s7RuoLGMLsEyHETKjqERxTY"
+        ]
+        let index = 0
+        const imgCarrousel = document.getElementById("carrousel-img")
+        imgCarrousel.setAttribute("src", imgArray[index])
+
+
+        function next() {
+            if (index !== imgArray.length - 1) {
+                index++
+            } else {
+                index = 0
+            }
+
+            imgCarrousel.setAttribute("src", imgArray[index])
+        }
+
+        function previous() {
+            if (index !== 0) {
+                index--
+            } else {
+                index = imgArray.length - 1
+            }
+
+            imgCarrousel.setAttribute("src", imgArray[index])
+        }
+
+        function handleForms(event) {
+            event.preventDefault()
+            console.log(event)
+            const form = document.querySelector("form").cadastro
+        }
+    </script>
+</body>
+
+</html>
